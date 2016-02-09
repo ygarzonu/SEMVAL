@@ -33,6 +33,9 @@ class Indicador < ActiveRecord::Base
       nombre
     end
 
+   def resultados    
+     1 + 1 
+   end
 
 
 	def calculate(operator)
