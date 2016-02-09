@@ -1,0 +1,27 @@
+<%# Requerido por devise y usado por toda la app %>
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+
+<% if user_signed_in? %>
+	<p class="bg-success">Hola, <%= current_user.name1.capitalize + " " + current_user.ape1.capitalize %></p>
+<%end%>
+
+<% if notice %>
+  <div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </div>
+<% elsif alert %>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= alert %>
+  </div>
+
+	<% flash.each do |name, msg| %>
+	<% content_tag :div, msg, class: "alert alert-#{name}" %>
+	<% end %>
+
+<% end %>

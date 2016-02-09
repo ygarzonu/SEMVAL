@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="col-sm-7">
+		<section class="containerWaterMark">
+			<div class="indicador">
+			<h1>Editar Indicador: <small><%= @indicador.nombre.capitalize %></small></h1>
+
+			<p><%= render 'form' %></p>
+			
+			</div>
+		</section>
+	</div>
+	<div class="col-sm-5">
+		<table>
+			<tr>
+				<section class="containerWaterMark">					
+						<%= render "variables/form" %>					
+				</section>
+			</tr>
+			<tr>
+				<section class="containerWaterMark">
+					<div>
+						<%= link_to '<button type="button">Agregar</button>'.html_safe,  class:"btn btn-warning" %>
+					</div>
+					<div class="form-group">
+					  <label for="variables">Selecciona variable de medición:</label>
+					  <select class="form-control" id="variables">
+					    <option>@indicador.variable</option>
+					  </select>					
+					</div>
+					<%= link_to '<button type="button">+</button>'.html_safe,   class:"btn btn-default" %>
+					<%= link_to '<button type="button">-</button>'.html_safe,   class:"btn btn-default" %>
+					<%= link_to '<button type="button">*</button>'.html_safe,   class:"btn btn-default" %>
+					<%= link_to '<button type="button">/</button>'.html_safe,   class:"btn btn-default" %>
+					<%= link_to '<button type="button">(</button>'.html_safe,   class:"btn btn-default" %>
+					<%= link_to '<button type="button">)</button>'.html_safe,   class:"btn btn-default" %>
+					<%= link_to '<button type="button">100</button>'.html_safe,   class:"btn btn-default" %>
+					<%= link_to '<button type="button">CE</button>'.html_safe,   class:"btn btn-default" %>
+				</section>
+			</tr>
+		</table>
+		
+	</div>
+</div>
+<%= link_to 'Mostrar', @indicador, class:"btn btn-warning" %> |
+<%= link_to 'Atrás', indicadors_path, class:"btn btn-default" %>	

@@ -1,0 +1,16 @@
+/*---------------------inicio de sesión------------------------------*/
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+	width: 80%;
+	margin-bottom: 1rem;
+	border: 1px solid $light;
+	border-radius: .4rem;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+	height: 30px;
+}
+
+textarea {
+	min-height: 200px;
+}

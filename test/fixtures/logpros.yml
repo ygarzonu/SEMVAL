@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meta: 1
+  estado: 1
+  peorE: 1
+  fechaM: 2015-10-31
+  fechaC: 2015-10-31
+  valor: 1
+  valorP: 1
+  proceso_id: 
+
+two:
+  meta: 1
+  estado: 1
+  peorE: 1
+  fechaM: 2015-10-31
+  fechaC: 2015-10-31
+  valor: 1
+  valorP: 1
+  proceso_id: 

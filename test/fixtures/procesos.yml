@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  importancia: 1
+  objetivo: MyText
+  meta: 1
+  fechaI: 2015-10-29
+  fechaC: 2015-10-29
+  user_id: 
+
+two:
+  nombre: MyString
+  importancia: 1
+  objetivo: MyText
+  meta: 1
+  fechaI: 2015-10-29
+  fechaC: 2015-10-29
+  user_id: 

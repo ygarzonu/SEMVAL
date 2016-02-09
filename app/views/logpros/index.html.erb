@@ -1,0 +1,39 @@
+<h1>Registros del proceso</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Meta</th>
+      <th>Estado</th>
+      <th>Peor Escenario</th>
+      <th>Fecha de Medición</th>
+      <th>Fecha de Corte</th>
+      <th>Valor</th>
+      <th>Valor Ponderado</th>
+      <th>Proceso</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logpros.each do |logpro| %>
+      <tr>
+        <td><%= logpro.meta %></td>
+        <td><%= logpro.estado %></td>
+        <td><%= logpro.peorE %></td>
+        <td><%= logpro.fechaM %></td>
+        <td><%= logpro.fechaC %></td>
+        <td><%= logpro.valor %></td>
+        <td><%= logpro.valorP %></td>
+        <td><%= logpro.proceso %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>'.html_safe, logpro %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-edit" title="Editar"></i>'.html_safe, edit_logpro_path(logpro) %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-remove-sign" title="Eliminar"></i>'.html_safe, logpro, method: :delete, data: { confirm: 'Estás segur@ de eliminar el registro del proceso?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Mi Proceso', new_logpro_path, class: "btn btn-info" %>

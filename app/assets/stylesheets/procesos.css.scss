@@ -1,0 +1,41 @@
+.thumbnail {
+	border: 0px;
+	position: relative;
+	padding: 50px;
+	border-radius: 0;
+	margin-bottom:50px;
+	margin-top: 40px;
+ 	margin-bottom: 30px;
+ 	max-width: 100%;
+}
+
+.item, .proceso article{
+	margin-top: 60px;
+}
+
+.valor {
+	 background-color: #FFD79F ;
+	 color: #fff;
+	 font-size: 20px;
+	   border-radius: 50%;
+	   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	   font-weight: 200;
+	   height: 120px;
+	   line-height: 120px;
+	   text-align: center;
+	   width: 120px;
+	 position: absolute;
+	 top: -20px;
+	}
+
+.valor p{
+	margin: 10px 0px 0px;
+}
+
+.titulo h1{
+	margin: 0px 0px 50px 0px;
+} 
+
+.table, .table-bordered table, th, td{
+	text-align: center;
+}

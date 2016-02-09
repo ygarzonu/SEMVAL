@@ -1,0 +1,49 @@
+<h1>Listado de Indicadores</h1>
+
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Variable de Medición</th>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Unidad</th>
+      <th>Sentido</th>
+      <th>Importancia</th>
+      <th>Meta</th>
+      <th>Meses</th>
+      <th>Estado Actual</th>
+      <th>Peor Escenario</th>
+      <th>Fórmula</th>
+      <th>Fuente</th>
+      <th>Fecha de Inicio</th>
+      <th>Fecha de Corte</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @indicadors.each do |indicador| %>
+      <tr>
+        <td><%= indicador.variableM %></td>
+        <td><%= indicador.nombre %></td>
+        <td><%= indicador.tipo %></td>
+        <td><%= indicador.unidad %></td>
+        <td><%= indicador.sentido %></td>
+        <td><%= indicador.importancia %></td>
+        <td><%= indicador.meta %></td>
+        <td><%= indicador.meses %></td>
+        <td><%= indicador.estadoA %></td>
+        <td><%= indicador.peorE %></td>
+        <td><%= indicador.formula %></td>
+        <td><%= indicador.fuente %></td>
+        <td><%= indicador.fechaI %></td>
+        <td><%= indicador.fechaC %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>'.html_safe, indicador %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-edit" title="Editar"></i>'.html_safe, edit_indicador_path(indicador) %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-remove-sign" title="Eliminar"></i>'.html_safe, indicador, method: :delete, data: { confirm: 'Estas segur@ de eliminar este indicador?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

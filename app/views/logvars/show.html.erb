@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @logvar.valor %>
+</p>
+
+<p>
+  <strong>Fechad:</strong>
+  <%= @logvar.fechaD %>
+</p>
+
+<p>
+  <strong>Variable:</strong>
+  <%= @logvar.variable %>
+</p>
+
+<%= link_to 'Edit', edit_logvar_path(@logvar) %> |
+<%= link_to 'Back', logvars_path %>

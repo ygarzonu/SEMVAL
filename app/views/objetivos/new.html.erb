@@ -1,0 +1,8 @@
+<h1>Nuevo objetivo</h1>
+
+<%= form_for :objetivo, url: objetivos_path do |f| %>
+	<p>
+		<%= f.label :objetivoV %>
+		<%= f.text_area :objetivoV %>
+	</p>
+<% end %>

@@ -1,0 +1,16 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @variable.nombre %>
+</p>
+<p>
+  <strong>Unidad:</strong>
+  <%= @variable.unidad %>
+</p>
+
+<p>
+  <strong>Valorperant:</strong>
+  <%= @variable.valorPerAnt %>
+</p>
+
+<%= link_to 'Editar', edit_variable_path(@variable),  class:"btn btn-warning" %> |
+<%= link_to 'Atrás', variables_path,  class:"btn btn-default" %>

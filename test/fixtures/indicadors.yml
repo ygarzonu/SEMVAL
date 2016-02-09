@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  variableM: MyString
+  nombre: MyString
+  tipo: MyString
+  unidad: MyString
+  sentido: MyString
+  importancia: 1
+  meta: 1
+  meses: 1
+  estadoA: 1
+  peorE: 1
+  formula: MyString
+  fuente: MyText
+  fechaI: 2015-10-29
+  fechaC: 2015-10-29
+  objetivo_id: 
+
+two:
+  variableM: MyString
+  nombre: MyString
+  tipo: MyString
+  unidad: MyString
+  sentido: MyString
+  importancia: 1
+  meta: 1
+  meses: 1
+  estadoA: 1
+  peorE: 1
+  formula: MyString
+  fuente: MyText
+  fechaI: 2015-10-29
+  fechaC: 2015-10-29
+  objetivo_id: 

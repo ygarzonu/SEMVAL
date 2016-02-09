@@ -1,0 +1,57 @@
+  <% if user_signed_in? %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Nombre</th>
+          <th>Importancia</th>
+          <th>Objetivo</th>
+          <th>Meta</th>
+          <th>Fecha de Inicio</th>
+          <th>Fecha de Corte</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @procesos.each do |proceso| %>
+          <tr>
+            <td><%= proceso.user_id %></td>
+            <td><%= proceso.nombre %></td>
+            <td><%= proceso.importancia %></td>
+            <td><%= proceso.objetivo %></td>
+            <td><%= proceso.meta %></td>
+            <td><%= proceso.fechaI %></td>
+            <td><%= proceso.fechaC %></td>
+            <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>'.html_safe, proceso %></td>
+            <td>
+              <% if current_user && proceso.user_id == current_user %>
+              <%= link_to '<i class="glyphicon glyphicon-edit" title="Editar"></i>'.html_safe, edit_proceso_path(proceso) %>
+              <% end %>
+            </td>
+            <td>
+              <% if current_user && proceso.user_id == current_user %>
+              <%= link_to '<i class="glyphicon glyphicon-remove-sign" title="Eliminar"></i>'.html_safe, proceso, method: :delete, data: { confirm: 'Estas segur@ de eliminar este proceso?' } %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <% if current_user %>
+    <%= link_to 'Nuevo Proceso', new_proceso_path, class: "btn btn-warning" %>
+    <% end %>
+  <%elsif%>
+      <h1>Procesos</h1>
+        <% @procesos.each do |proceso| %>
+        <div class="col-md-3 thumbnail">                    
+              <article class="item proceso">
+                <p class="valor"><%= proceso.meta %></p>
+                <h2><%= link_to proceso.nombre, proceso %></h2>
+                <button type="button" class="btn btn-primary">meta: <span class="badge"><%= proceso.meta %></span></button>
+                <p> <%= time_ago_in_words(proceso.created_at) %> </p>
+              </article>  
+        </div>
+  <%end%>
+<%end%>

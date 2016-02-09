@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Objetivos Misionales</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Objetivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @objetivos.each do |objetivo| %>
+      <tr>
+        <td><%= objetivo.objetivoV %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>'.html_safe, objetivo %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-edit" title="Editar"></i>'.html_safe, edit_objetivo_path(objetivo) %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-remove-sign" title="Eliminar"></i>'.html_safe, objetivo, method: :delete, data: { confirm: 'Estas segur@ de eliminar este objetivo misional?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo objetivo', new_objetivo_path, class:"btn btn-warning" %>

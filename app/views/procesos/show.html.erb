@@ -1,0 +1,62 @@
+<p>  
+  <h1>Proceso: <%= @proceso.nombre %></h1>
+</p>
+<p>lider de proceso: <%= @proceso.user.name1.capitalize + " " + @proceso.user.ape1.capitalize %></p>
+
+<section>
+  <h2>Objetivos Misionales</h2>
+
+  <% if @proceso.objetivos.any? %>
+    <ul>
+      <% @proceso.objetivos.each do |objetivo| %>
+        <li><%= link_to objetivo.objetivoV, objetivo %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p> No hay Objetivos misionales </p>
+  <% end %>
+</section>
+
+<section>
+  <h3>Registros</h3>  
+
+  <% if @proceso.logpros.any? %>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ENE</th>
+            <th>FEB</th>
+            <th>MAR</th>
+            <th>ABR</th>
+            <th>MAY</th>
+            <th>JUN</th>
+            <th>JUL</th>
+            <th>AGO</th>
+            <th>SEP</th>
+            <th>OCT</th>
+            <th>NOV</th>
+            <th>DIC</th>
+          </tr> 
+        </thead>
+        <tbody>
+          <% @proceso.logpros.each do |rp| %>     
+          <tr>
+            <td><%= link_to rp, rp %></td>  
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <% else %>
+      <p>no hay registros</p>
+    <% end %>
+</section>
+
+
+
+<%= link_to 'Todos los procesos', procesos_path, class: "btn btn-info"  %>
+<% if current_user && @proceso.user_id == current_user %>
+  <%= link_to 'Editar', edit_proceso_path(@proceso), class: "btn btn-warning" %>
+<% end %> |
+<%= link_to 'Atrás', procesos_path, class: "btn btn-default" %>

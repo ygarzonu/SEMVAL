@@ -1,0 +1,29 @@
+<%= form_for(@logvar) do |f| %>
+  <% if @logvar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@logvar.errors.count, "error") %> prohibited this logvar from being saved:</h2>
+
+      <ul>
+      <% @logvar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :valor %><br>
+    <%= f.number_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label :fechaD %><br>
+    <%= f.date_select :fechaD %>
+  </div>
+  <div class="field">
+    <%= f.label :variable_id %><br>
+    <%= f.text_field :variable_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

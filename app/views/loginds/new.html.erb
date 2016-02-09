@@ -1,0 +1,35 @@
+<div class="row">
+	<div>
+		<section class="col-sm-4">
+			<%= form_for(@logind) do |f| %>
+	    		<% if @logind.errors.any? %>
+	      			<div id="error_explanation">
+	        			<h2><%= pluralize(@logind.errors.count, "error") %> prohibited this logind from being saved:</h2>
+
+				        <ul>
+	        			<% @logind.errors.full_messages.each do |message| %>
+	          				<li><%= message %></li>
+	        			<% end %>
+	        			</ul>
+	      			</div>
+	    		<% end %>
+
+				<div class="field">
+	    			<%= f.label :Mes %><br>
+	    			<%= f.select :mes, {:use_month_names => [t(:jan), t(:feb), t(:mar), t(:apr), t(:may), t(:jun), t(:jul), t(:aug), t(:sep), t(:oct), t(:nov), t(:dec)]}, :include_blank => "- Elegir mes -" %>
+	  			</div>
+			<% end %>
+		</section>
+	</div>
+
+	<div class="col-sm-8">
+		<section class="containerWaterMark">
+			<h1>Nuevo registro de indicador</h1>
+
+			<%= render 'form' %>
+		</section>
+	</div>
+	
+	<div>
+		<%= link_to 'Atrás', loginds_path, class:"btn btn-default" %>
+	</div>

@@ -1,0 +1,31 @@
+<%= form_for(@variable) do |f| %>
+  <% if @variable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@variable.errors.count, "error") %> prohibited this variable from being saved:</h2>
+
+      <ul>
+      <% @variable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Variables</div>
+    <div class="panel-body">
+      <div class="field">
+        <%= f.label :Nombre %><br>
+        <%= f.text_field :nombre %>
+      </div>
+      <div class="field">
+        <%= f.label :Valor_Periodo_Anterior %><br>
+        <%= f.text_field :valorPerAnt %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  </div>
+    
+<% end %>

@@ -1,0 +1,8 @@
+<section class="containerSession">
+	<h1>Editando Proceso: <%= @proceso.nombre.capitalize %></h1>
+
+	<%= render 'form' %>
+</section>
+
+<%= link_to 'Mostrar', @proceso, class:"btn btn-warning" %> |
+<%= link_to 'Atrás', procesos_path, class:"btn btn-default" %>

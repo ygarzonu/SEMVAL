@@ -1,0 +1,9 @@
+<%= form_for([@indicador, @indicador.comments.build]) do |f| %>
+<div class="field">
+    <%= f.label :reply_to_thread %><br>
+    <%= f.text :contenido %>
+</div>
+<%= f.hidden_field :indicador_id %>
+<div class="actions">
+    <%= f.submit "comentar", class:"btn btn-warning" %>
+</div>

@@ -1,0 +1,114 @@
+<div class="row">
+  <div class="col-sm-6">
+    <section class="containerWaterMark">
+      <div class="indicador">
+        <p>
+        <h2>Estructura Indicador</h2>
+        </p>
+        <p>
+        <strong>Variable de Medición:</strong>
+        <%= @indicador.variableM %>
+        </p>
+
+        <p>
+          <strong>Nombre:</strong>
+          <%= @indicador.nombre %>
+        </p>
+
+        <p>
+          <strong>Tipo:</strong>
+          <%= @indicador.tipo %>
+        </p>
+
+        <p>
+          <strong>Unidad:</strong>
+          <%= @indicador.unidad %>
+        </p>
+
+        <p>
+          <strong>Sentido:</strong>
+          <%= @indicador.sentido %>
+        </p>
+
+        <p>
+          <strong>Importancia:</strong>
+          <%= @indicador.importancia %>
+        </p>
+
+        <p>
+          <strong>Meta:</strong>
+          <%= @indicador.meta %>
+        </p>
+
+        <p>
+          <strong>Meses:</strong>
+          <%= @indicador.meses %>
+        </p>
+
+        <p>
+          <strong>Estado Actual:</strong>
+          <%= @indicador.estadoA %>
+        </p>
+
+        <p>
+          <strong>Peor Escenario:</strong>
+          <%= @indicador.peorE %>
+        </p>
+
+        <p>
+          <strong>Formula:</strong>
+          <%= @indicador.formula %>
+        </p>
+
+        <p>
+          <strong>Fuente:</strong>
+          <%= @indicador.fuente %>
+        </p>
+
+        <p>
+          <strong>Fecha de Ingreso:</strong>
+          <%= @indicador.fechaI %>
+        </p>
+
+        <p>
+          <strong>Fecha de Corte:</strong>
+          <%= @indicador.fechaC %>
+        </p>
+
+        <%= link_to 'Editar', edit_indicador_path(@indicador), class:"btn btn-warning" %> |
+        <%= link_to 'Atrás', indicadors_path, class:"btn btn-default" %>
+      </div>        
+    </section>
+  </div>
+  <div class="col-sm-6">
+  <table>
+      <tr>
+        <section>
+          <%= link_to 'Registrar', loginds_path, class:"btn btn-info" %>    
+        </section>
+      </tr>
+      <tr>
+        <section class="containerWaterMark">
+          <h2>Variables (Cuantitativas)</h2>
+
+          <% if @indicador.variables.any? %>
+            <ul>
+              <% @indicador.variables.each do |variable| %>
+                <li><%= link_to variable.nombre, variable %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p> No hay variables </p>
+          <% end %>
+        </section>
+      </tr>
+    </table>   
+  </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<section class="containerWaterMark">
+  <p>
+    <strong>Meta:</strong>
+    <%= @logpro.meta %>
+  </p>
+
+  <p>
+    <strong>Estado:</strong>
+    <%= @logpro.estado %>
+  </p>
+
+  <p>
+    <strong>Peor Escenario:</strong>
+    <%= @logpro.peorE %>
+  </p>
+
+  <p>
+    <strong>Fecha de Medición:</strong>
+    <%= @logpro.fechaM %>
+  </p>
+
+  <p>
+    <strong>Fecha de Corte:</strong>
+    <%= @logpro.fechaC %>
+  </p>
+
+  <p>
+    <strong>Valor:</strong>
+    <%= @logpro.valor %>
+  </p>
+
+  <p>
+    <strong>Valor Ponderado:</strong>
+    <%= @logpro.valorP %>
+  </p>
+
+  <p>
+    <strong>Proceso:</strong>
+    <%= @logpro.proceso %>
+  </p>
+</section>
+
+<%= link_to 'Editar', edit_logpro_path(@logpro), class:"btn btn-warning" %> |
+<%= link_to 'Atrás', logpros_path, class:"btn btn-default" %>

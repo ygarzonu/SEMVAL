@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> AppIG | Indicadores de Gestión </title>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	
+  	<%= csrf_meta_tags %>
+  	<%= javascript_include_tag :defaults, "nested_form" %>
+  	
+  	<script type = "text/javascript" src="angular.min.js"></script>
+	<script type = "text/javascript" src="application.js"></script>
+</head>
+<body ng-app="kpi">
+	
+	<header class="cabecera">
+	 	<div class="container">
+			<div class="logo">
+				<%= link_to "SEMVAL SG", root_path %>
+			</div>
+			
+			<nav>
+				<%= render "partials/navigation" %>
+			</nav>
+		</div>
+	</header>
+
+	<section class="clearfix">
+		<%= render "layouts/notifications" %>
+	</section>
+
+	<div class="main">
+      	<div class="container">				
+			<%= yield %>
+		</div>
+	</div>
+		
+	<footer class="pie">
+			<p class="copyright">&copy;2015 YENIOM </p>
+	</footer>
+</body>
+<script type = "text/javascript" src="wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</html>
