@@ -15,6 +15,7 @@ class LogindsController < ApplicationController
   # GET /loginds/new
   def new
     @logind = Logind.new 
+    @indicador_nombre = Indicador.find(params[:indicador_id]).nombre
   end
 
   # GET /loginds/1/edit

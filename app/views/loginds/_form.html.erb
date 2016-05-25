@@ -40,8 +40,8 @@
     <%= f.number_field :valorP %>
   </div>
   <div class="field">
-    <%= f.label :indicador_id %><br>
-    <%= f.text_field :indicador_id %>
+    <%= f.label :indicador  %><br>
+    <%= text_field_tag :indicador, @indicador_nombre ,disabled: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
