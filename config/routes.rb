@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/login' => 'devise/sessions#new'
+
 
   #devise_scope :user do
   #  get '/users/sign_out' => 'devise/sessions#destroy'
@@ -41,6 +41,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+    get '/login' => 'devise/sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -18,6 +18,7 @@ class IndicadorsController < ApplicationController
   # GET /indicadors/new
   def new
     @indicador = Indicador.new
+    @objetivo = Objetivo.find( params[:objetivo_id])
   end
 
   # GET /indicadors/1/edit
@@ -30,7 +31,6 @@ class IndicadorsController < ApplicationController
   # POST /indicadors.json
   def create
     @indicador =  Indicador.new(indicador_params)
-     
     respond_to do |format|
       if @indicador.save
         format.html { redirect_to @indicador, notice: 'El indicador fue creado exitosamente.' }
@@ -77,6 +77,6 @@ class IndicadorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def indicador_params
-      params.require(:indicador).permit(:variableM, :nombre, :tipo, :unidad, :sentido, :importancia, :meta, :meses, :estadoA, :peorE, :formula, :fuente, :fechaI, :fechaC, variables_attributes: [:id, :nombre, :unidad, :valorPerAnt] )
+      params.require(:indicador).permit(:objetivo_id, :variableM, :nombre, :tipo, :unidad, :sentido, :importancia, :meta, :meses, :estadoA, :peorE, :formula, :fuente, :fechaI, :fechaC, variables_attributes: [:id, :nombre, :unidad, :valorPerAnt] )
     end
 end

@@ -37,9 +37,9 @@ class Indicador < ActiveRecord::Base
 
  
   def variablePerAnt
-    if valorPerAnt != null
-      v = variable.find(:variable_id)
-    end
+    #if valorPerAnt != null
+    #  v = variable.find(:variable_id)
+    #end
   end
  
   def calculate(operator)

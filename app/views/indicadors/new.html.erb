@@ -1,5 +1,80 @@
 <h1>Nuevo Indicador</h1>
-
-<%= render 'form' %>
-
+  <%= form_for(@indicador, url: {action: :create}, http: {method: :post}) do |f| %>
+    <% if @indicador.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@indicador.errors.count, "error") %> prohibited this indicador from being saved:</h2>
+        <ul>
+        <% @indicador.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Variable de Medición</label>
+      <%= f.text_field :variableM, class:"form-control-static" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Nombre</label>
+      <%= f.text_field :nombre, class:"form-control-static" %>
+    </div>
+    <div class="form-group">      
+      <% tipos ={'Eficacia' => 'Eficacia', 'Eficiencia' => 'Eficiencia', 'Efectividad' => 'Efectividad'}%>
+      <% lista = tipos.sort %>
+      <label class="col-sm-4 control-label">Tipo</label>
+      <%= f.select :tipo, lista, selected: "Asc"%>
+    </div>
+     <div class="form-group">
+        <% unidades ={'Días' => 'Días', 'Pesos' => 'Pesos', 'Porcentaje' => 'Porcentaje'}%>
+        <% lista = unidades.sort %>
+        <label class="col-sm-4 control-label">Unidad</label>
+        <%= f.select :unidad, lista, selected: "Asc"%>
+    </div>
+    <div class="form-group">
+      <% sentidos ={'Ascendente' => 'Asc', 'Descendente' => 'Desc'}%>
+      <% lista = sentidos.sort %>
+      <label class="col-sm-4 control-label">Sentido</label>
+      <%= f.select :sentido, lista, selected: "Asc" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Importancia</label>
+      <%= f.number_field :importancia, class:"form-control-static col-sm-2" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Meta</label>
+      <%= f.number_field :meta, class:"form-control-static col-sm-2" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Meses</label>
+      <%= f.number_field :meses, class:"form-control-static col-sm-2" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Estado Actual</label>
+      <%= f.number_field :estadoA, class:"form-control-static col-sm-2" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Peor Escenario</label>
+      <%= f.number_field :peorE, class:"form-control-static col-sm-2" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><%= link_to 'Formula' %></label>
+      <%= f.text_field :formula, class:"form-control-static" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Fuente</label>
+      <%= f.text_area :fuente, class:"form-control-static" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Fecha de Inicio</label>
+      <%= f.date_select :fechaI, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']}, class:"form-control-static" %>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-4 control-label">Fecha de Corte</label>
+      <%= f.date_select :fechaC, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']}, class:"form-control-static" %>
+    </div>
+    <div class="actions">
+    	<%= f.hidden_field :objetivo_id, { value: @objetivo.id} %>
+      <%= f.submit class: 'btn btn-default' %>
+    </div>
+  <% end %>
 <%= link_to 'Atrás', indicadors_path %>

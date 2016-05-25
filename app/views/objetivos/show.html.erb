@@ -14,7 +14,7 @@
 	<h3 class="text-center"><%= link_to @objetivo.indicador.nombre, indicador_path(@objetivo.indicador) %></h3>
 	 <% else %>
       <p>no hay indicador</p>
-      <%= link_to 'Crear indicador', new_indicador_path, class:"btn btn-warning" %>
+      <%= link_to 'Crear indicador', new_indicador_path(objetivo_id: @objetivo.id), class:"btn btn-warning" %>
     <% end %>
 </section> 
  
