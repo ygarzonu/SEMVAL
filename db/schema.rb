@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160121221747) do
   add_index "logvars", ["variable_id"], name: "index_logvars_on_variable_id"
 
   create_table "objetivos", force: :cascade do |t|
-    t.text     "ObjetivoV"
+    t.text     "objetivoV"
     t.integer  "proceso_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
