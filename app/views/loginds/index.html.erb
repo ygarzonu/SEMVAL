@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <% if user_signed_in? %>
-  <h1>Registros Indicador</h1>
+  <h1>Registros Indicador: </h1>
     <table class="table table-bordered table-hover ">
       <thead>
       <tr> 
-        <th> </th>
+        <th></th>
         <th>Ene</th>
         <th>Feb</th>
         <th>Mar</th>
@@ -19,51 +17,43 @@
         <th>Nov</th>
         <th>Dic</th>       
       </tr>
-      <tr>
-        <th>Meta</th>
-      </tr>
-      <tr>
-        <th>Estado Actual</th>  
-      </tr>
-      <tr>
-        <th>Peor Escenario</th>
-      </tr>
-      <tr>
-        <th>Estado Actual</th>  
-      </tr>    
-      <tr>
-        <th>Fecha de medición</th>
-      </tr>  
-      <tr>
-        <th>Fecha de corte</th>
-      </tr>
-      <tr>
-        <th>Valor</th>
-      </tr>
-      <tr>
-        <th>Valor Ponderado</th>
-      </tr>  
-      <tr>
-        <th>indicador</th>
-      </tr>  
-        
+              
   </thead>
 
   <tbody>
     <% @loginds.each do |logind| %>
-      <tr>
+     <tr>
+        <th>Meta</th>
         <td><%= logind.meta %></td>
-        <td><%= logind.estado %></td>
-        <td><%= logind.peorE %></td>
-        <td><%= logind.fechaM %></td>
-        <td><%= logind.fechaC %></td>
-        <td><%= logind.valor %></td>
-        <td><%= logind.valorP %></td>
-        <td><%= logind.indicador %></td>
-        <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>'.html_safe, logind %></td>
-        <td><%= link_to '<i class="glyphicon glyphicon-edit" title="Editar"></i>'.html_safe, edit_logind_path(logind) %></td>
-        <td><%= link_to '<i class="glyphicon glyphicon-remove-sign" title="Eliminar"></i>'.html_safe, logind, method: :delete, data: { confirm: 'Estas segur@ de eliminar este registro?' } %></td>
       </tr>
+      <tr>
+        <th>Estado Actual</th>
+        <td><%= logind.estado %></td>  
+      </tr>
+      <tr>
+        <th>Peor Escenario</th>
+        <td><%= logind.peorE %></td>
+      </tr>
+      <tr>
+        <th>Fecha de medición</th>
+        <td><%= logind.fechaM %></td>
+      </tr>  
+      <tr>
+        <th>Fecha de corte</th>
+        <td><%= logind.fechaC %></td>
+      </tr>
+      <tr>
+        <th>Valor</th>
+        <td><%= logind.valor %></td>
+      </tr>
+      <tr>
+        <th>Valor Ponderado</th>
+        <td><%= logind.valorP %></td>
+      </tr>  
+      <tr>
+        <th>indicador</th>
+        <td><%= logind.indicador %></td>
+      </tr> 
     <% end %>
   </tbody>
 </table>

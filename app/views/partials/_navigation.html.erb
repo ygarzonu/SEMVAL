@@ -1,8 +1,7 @@
-	<ul class="nav navbar-nav navbar-right">
 		<% if user_signed_in? %>
-			<li><%= link_to '<i class="fa fa-user"></i> Editar perfil'.html_safe, edit_user_registration_path%></li>
-			<li><%= link_to '<i class="fa fa-sign-out"></i> Cerrar Sesión'.html_safe, destroy_user_session_path, :method => :delete%></li>
+			<a><%= link_to 'Mi Tablero' %></a>
+			<a><%= link_to current_user.username, edit_user_registration_path%></a>
+			<a><%= link_to '<i class="fa fa-sign-out"></i> Cerrar Sesión'.html_safe, destroy_user_session_path, :method => :delete %></a>
 		<% else %>
-			<li><%= link_to '<i class="fa fa-sign-in"></i> Iniciar Sesión'.html_safe, new_user_session_path%></li>
+			<a><%= link_to '<i class="fa fa-sign-in"></i> Iniciar Sesión'.html_safe, new_user_session_path%></a>
 		<%end%>
-	</ul>

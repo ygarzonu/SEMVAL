@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Meta del indicador:</strong>
   <%= @logind.meta %>
@@ -40,40 +38,6 @@
   <%= @logind.indicador_id %>
 </p>
 
-<div>
-<script src="//d3js.org/d3.v3.min.js"></script>
 
-<script>
-var chartdata = [@logind.meta, @logind.valorP];
- 
-var height = 200,
-    width = 720,
-    barWidth = 40,
-    barOffset = 20;
- 
-var yScale = d3.scale.linear()
-        .domain([0, d3.max(chartdata)])
-        .range([0, height])
- 
-d3.select('#bar-chart').append('svg')
-  .attr('width', width)
-  .attr('height', height)
-  .style('background', '#dff0d8')
-  .selectAll('rect').data(chartdata)
-  .enter().append('rect')
-    .style({'fill': '#3c763d', 'stroke': '#d6e9c6', 'stroke-width': '5'})
-    .attr('width', barWidth)
-    .attr('height', function (data) {
-        return yScale(data);
-    })
-    .attr('x', function (data, i) {
-        return i * (barWidth + barOffset);
-    })
-    .attr('y', function (data) {
-        return height - yScale(data);
-    });
-</script>
-</div>
-
-<%= link_to 'Edit', edit_logind_path(@logind), class:"btn btn-warning"  %> |
-<%= link_to 'Back', loginds_path, class:"btn btn-default" %>
+<%= link_to 'Editar', edit_logind_path(@logind), class:"btn btn-warning"  %> |
+<%= link_to 'Atrás', loginds_path, class:"btn btn-default" %>

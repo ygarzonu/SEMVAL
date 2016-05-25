@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-sm-6">
+  <h1>Proceso: <%= @indicador.objetivo.proceso.nombre.upcase %> </h1>
     <section class="containerWaterMark">
       <div class="indicador">
         <p>
@@ -83,7 +84,7 @@
   <div class="col-sm-6">
   <table>
       <tr>
-        <section>
+        <section class="registrar">
           <%= link_to 'Registrar', loginds_path, class:"btn btn-info" %>    
         </section>
       </tr>
@@ -100,6 +101,13 @@
           <% else %>
             <p> No hay variables </p>
           <% end %>
+          <%= link_to 'Nueva variable', new_variable_path(@variable), class:"btn btn-warning" %>
+        </section>
+      </tr>
+      <tr>
+      
+        <section id="comments" class="containerWaterMark">
+            
         </section>
       </tr>
     </table>   

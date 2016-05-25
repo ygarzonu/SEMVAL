@@ -4,7 +4,7 @@
 			<%= form_for(@logind) do |f| %>
 	    		<% if @logind.errors.any? %>
 	      			<div id="error_explanation">
-	        			<h2><%= pluralize(@logind.errors.count, "error") %> prohibited this logind from being saved:</h2>
+	        			<h2><%= pluralize(@logind.errors.count, "error") %> prohibido este registro para ser guardado:</h2>
 
 				        <ul>
 	        			<% @logind.errors.full_messages.each do |message| %>
@@ -13,10 +13,12 @@
 	        			</ul>
 	      			</div>
 	    		<% end %>
-
-				<div class="field">
-	    			<%= f.label :Mes %><br>
-	    			<%= f.select :mes, {:use_month_names => [t(:jan), t(:feb), t(:mar), t(:apr), t(:may), t(:jun), t(:jul), t(:aug), t(:sep), t(:oct), t(:nov), t(:dec)]}, :include_blank => "- Elegir mes -" %>
+				
+				<% mes = {:Enero => 1, :Febrero => 2, :Marzo => 3, :Abril => 4, :Mayo => 5, :Junio => 6, :Julio => 7, :Agosto => 8, :Septiembre => 9, :Octubre => 10, :Noviembre => 11, :Diciembre => 12} %>
+				<div class="field">	
+	    				<% lista = mes %>
+	    				<%= f.label :Mes %><br>
+	    				<%= f.select :mes, lista, {include_blank: "- Elegir mes -"}, {:class => 'logbymonth'} %>
 	  			</div>
 			<% end %>
 		</section>

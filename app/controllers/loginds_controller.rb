@@ -14,7 +14,7 @@ class LogindsController < ApplicationController
 
   # GET /loginds/new
   def new
-    @logind = Logind.new
+    @logind = Logind.new 
   end
 
   # GET /loginds/1/edit
@@ -25,10 +25,12 @@ class LogindsController < ApplicationController
   # POST /loginds.json
   def create
     @logind = Logind.new(logind_params)
+    
+      
 
     respond_to do |format|
       if @logind.save
-        format.html { redirect_to @logind, notice: 'Logind was successfully created.' }
+        format.html { redirect_to @logind, notice: 'El registro del indicador fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @logind }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class LogindsController < ApplicationController
   def update
     respond_to do |format|
       if @logind.update(logind_params)
-        format.html { redirect_to @logind, notice: 'Logind was successfully updated.' }
+        format.html { redirect_to @logind, notice: 'El registro del indicador fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @logind }
       else
         format.html { render :edit }
@@ -56,11 +58,12 @@ class LogindsController < ApplicationController
   def destroy
     @logind.destroy
     respond_to do |format|
-      format.html { redirect_to loginds_url, notice: 'Logind was successfully destroyed.' }
+      format.html { redirect_to loginds_url, notice: 'El registro del indicador fue eliminado exitosamente.' }
       format.json { head :no_content }
     end
   end
 
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_logind

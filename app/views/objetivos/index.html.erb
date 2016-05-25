@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Objetivos Misionales</h1>
+<h1>Objetivos Visionales</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Proceso</th>
       <th>Objetivo</th>
       <th colspan="3"></th>
     </tr>
@@ -13,10 +14,13 @@
   <tbody>
     <% @objetivos.each do |objetivo| %>
       <tr>
+        <% if objetivo.proceso.user == current_user %>
+        <td><%= objetivo.proceso %></td>
         <td><%= objetivo.objetivoV %></td>
         <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>'.html_safe, objetivo %></td>
         <td><%= link_to '<i class="glyphicon glyphicon-edit" title="Editar"></i>'.html_safe, edit_objetivo_path(objetivo) %></td>
         <td><%= link_to '<i class="glyphicon glyphicon-remove-sign" title="Eliminar"></i>'.html_safe, objetivo, method: :delete, data: { confirm: 'Estas segur@ de eliminar este objetivo misional?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

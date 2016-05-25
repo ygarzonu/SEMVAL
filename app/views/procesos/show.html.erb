@@ -1,10 +1,11 @@
 <p>  
   <h1>Proceso: <%= @proceso.nombre %></h1>
 </p>
-<p>lider de proceso: <%= @proceso.user.name1.capitalize + " " + @proceso.user.ape1.capitalize %></p>
+<p>Lider de proceso: <%= @proceso.user.name1.capitalize + " " + @proceso.user.ape1.capitalize %></p>
+<p>Objetivo Misional: <%= @proceso.objetivo %></p>
 
 <section>
-  <h2>Objetivos Misionales</h2>
+  <h2>Objetivos Visionales</h2>
 
   <% if @proceso.objetivos.any? %>
     <ul>
@@ -23,9 +24,9 @@
   <% if @proceso.logpros.any? %>
     <div class="table-responsive">
       <table class="table table-bordered">
-        <thead>
+        <thead class="open">
           <tr>
-            <th>ENE</th>
+            <th><a href="#">ENE</a></th>
             <th>FEB</th>
             <th>MAR</th>
             <th>ABR</th>
@@ -53,6 +54,22 @@
     <% end %>
 </section>
 
+<div id="popup" style="display: none;">
+    <div class="content-popup">
+        <div class="close"><a href="#" id="close"></a></div>
+        <div>
+           <h2>Cuadro general de indicadores</h2>
+           <table>
+             <thead>
+               <th>indicador</th>
+             </thead>
+             <tbody>
+               <tr><td>puntaje</td></tr>
+             </tbody>
+           </table>
+        </div>
+    </div>
+</div>
 
 
 <%= link_to 'Todos los procesos', procesos_path, class: "btn btn-info"  %>

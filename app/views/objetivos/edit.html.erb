@@ -1,0 +1,8 @@
+<h1>Editar objetivo</h1>
+
+<%= form_for (:objetivo, url: objetivos_path , html: {method: "post"}) do |f| %>
+	<p>
+		<%= f.label :objetivoV %>
+		<%= f.text_area :objetivoV %>
+	</p>
+<% end %>

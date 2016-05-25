@@ -2,7 +2,7 @@
   <%= form_for(@proceso) do |f| %>
     <% if @proceso.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@proceso.errors.count, "error") %> prohibited this proceso from being saved:</h2>
+        <h2><%= pluralize(@proceso.errors.count, "error") %> evita que este proceso sea guardado:</h2>
 
         <ul>
         <% @proceso.errors.full_messages.each do |message| %>
@@ -23,8 +23,8 @@
           <%= f.number_field :importancia %>
         </div>
         <div class="field">
-          <%= f.label :Objetivo_visional %><br>
-          <%= f.text_area :objetivo, placeholder:"VRI camb + Variable + Cuánto + Cómo + Cuándo" %>
+          <%= f.label :Objetivo_Misional %><br>
+          <%= f.text_area :objetivo, placeholder:"Verbo Rector en Infinitivo cambiante + Variable + Cuánto + Cómo + Cuándo" %>
         </div>
         <div class="field">
           <%= f.label :Meta %><br>
@@ -46,8 +46,8 @@
         <%= f.fields_for :objetivos do | objetivo | %>
           <div class="objetivos_fields">
             <div class="fields">
-              <%= objetivo.label :objetivoV, "Objetivo Misional" %><br>
-              <%= objetivo.text_field :objetivoV,  placeholder:"VRI cte + Producto + Características + Recursos + para + impacto esperado" %>
+              <%= objetivo.label :objetivoV, "Objetivo Visional" %><br>
+              <%= objetivo.text_field :objetivoV,  placeholder:"Verbo Rector en Infinitivo constante + Producto + Características + Recursos + para + impacto esperado" %>
               <%= objetivo.check_box :_destroy %>
               <%= objetivo.label :_destroy, 'eliminar' %>
             </div>    

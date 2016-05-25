@@ -1,31 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Logvars</h1>
+<h1>Registro de Variables</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Valor</th>
-      <th>Fechad</th>
-      <th>Variable</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @logvars.each do |logvar| %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= logvar.valor %></td>
-        <td><%= logvar.fechaD %></td>
-        <td><%= logvar.variable %></td>
-        <td><%= link_to 'Show', logvar %></td>
-        <td><%= link_to 'Edit', edit_logvar_path(logvar) %></td>
-        <td><%= link_to 'Destroy', logvar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Valor</th>
+        <th>Fecha del dato</th>
+        <th>Variable</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @logvars.each do |logvar| %>
+        <tr>
+          <td><%= logvar.valor %></td>
+          <td><%= logvar.fechaD %></td>
+          <td><%= logvar.variable %></td>
+          <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>', logvar %></td>
+          <td><%= link_to '<i class="glyphicon glyphicon-edit" title="Editar"></i>', edit_logvar_path(logvar) %></td>
+          <td><%= link_to '<i class="glyphicon glyphicon-remove-sign" title="Eliminar"></i>', logvar, method: :delete, data: { confirm: 'Estás segur@?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'New Logvar', new_logvar_path %>
+<%= link_to 'Nuevo registro', new_logvar_path, class:"btn btn-warning" %>

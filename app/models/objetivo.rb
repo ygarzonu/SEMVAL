@@ -14,5 +14,8 @@ class Objetivo < ActiveRecord::Base
 	validates :objetivoV, presence: true
 
 
+  	#values = Objetivo.group(:proceso).count(:objetivoV) # Objetivo belongs_to :proceso; contar el numero de objetivos(indicadores) que tiene un proceso
+  	#importancia = 100/values
+
 	
 end

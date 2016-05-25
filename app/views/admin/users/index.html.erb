@@ -1,0 +1,24 @@
+<h1>Tablero de Control</h1>
+
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Nombre completo</th>
+			<th>username</th>
+			<th>Creado</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |u| %>
+			<tr>
+				<td><%= u.name1.capitalize + " " + u.ape1.capitalize %></td>
+				<td><%= u.username %></td>
+				<td><%= time_ago_in_words(u.created_at) %></td>
+				<td>
+					<%= link_to 'Editar', edit_admin_user_path(u) %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

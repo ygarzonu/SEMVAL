@@ -1,12 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>Listado de Variables</h1>
 
-<h1>Listing Variables</h1>
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Valorperant</th>
+      <th>Unidad</th>
+      <th>Valor Periodo Anterior</th>
+      <th>Indicador</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +15,12 @@
     <% @variables.each do |variable| %>
       <tr>
         <td><%= variable.nombre %></td>
+        <td><%= variable.unidad %></td>
         <td><%= variable.valorPerAnt %></td>
-        <td><%= link_to 'Show', variable %></td>
-        <td><%= link_to 'Edit', edit_variable_path(variable) %></td>
-        <td><%= link_to 'Destroy', variable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= variable.indicador_id %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>'.html_safe, variable %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-edit" title="Editar"></i>'.html_safe, edit_variable_path(variable) %></td>
+        <td><%= link_to '<i class="glyphicon glyphicon-remove-sign" title="Eliminar"></i>'.html_safe, variable, method: :delete, data: { confirm: 'Estás segur@ de eliminar esta variable?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Variable', new_variable_path %>
+<%= link_to 'Nueva Variable', new_variable_path, class:"btn btn-warning" %>

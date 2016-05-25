@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
-  
+  get '/login' => 'devise/sessions#new'
+
+  #devise_scope :user do
+  #  get '/users/sign_out' => 'devise/sessions#destroy'
+  #end
+
   devise_for :users
+
+  namespace :admin do
+  # Directs /admin/devise/sessions/* to Admin::SessionsController
+  # (app/controllers/admin/sessions_controller.rb)
+    resources :sessions, path: '/login', only: [:new, :create, :destroy]
+    resources :users, only: [:index, :edit, :update]
+  end
 
   resources :procesos
 

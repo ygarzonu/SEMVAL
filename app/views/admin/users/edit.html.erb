@@ -1,0 +1,33 @@
+<h1>Editar Usuarios</h1>
+
+<% if @user.errors.any? %>
+<div id="validation_errors">
+	<h2><%= pluralize(@user.errors.count, "error") %> está impidiendo actualizar este usuario: </h2>
+
+	<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<%= form_for [:admin, @user] do |f| %>
+	<p>
+		<%= f.label :name1 %>
+		<%= f.text_field :name1 %>
+		<%= f.label :ape1 %>
+		<%= f.text_field :ape1 %>
+	</p>
+	<p>
+		<%= f.label :username %>
+		<%= f.text_field :username %>
+	</p>
+	<p>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

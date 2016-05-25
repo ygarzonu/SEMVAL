@@ -13,7 +13,11 @@
 		<table>
 			<tr>
 				<section class="containerWaterMark">					
-						<%= render "variables/form" %>					
+						<%= render "variables/form" %>
+					
+						<div>
+							<%= link_to '<button type="button">Guardar</button>'.html_safe,  class:"btn btn-warning" %>
+						</div>
 				</section>
 			</tr>
 			<tr>
@@ -24,7 +28,9 @@
 					<div class="form-group">
 					  <label for="variables">Selecciona variable de medición:</label>
 					  <select class="form-control" id="variables">
-					    <option>@indicador.variable</option>
+					  	<% @indicador.variables.each do |variable| %>
+					    <option><%= variable.nombre %></option>
+					    <% end %>
 					  </select>					
 					</div>
 					<%= link_to '<button type="button">+</button>'.html_safe,   class:"btn btn-default" %>

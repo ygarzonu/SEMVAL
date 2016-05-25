@@ -1,9 +1,4 @@
 <%# Requerido por devise y usado por toda la app %>
-<ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
-</ol>
 
 <% if user_signed_in? %>
 	<p class="bg-success">Hola, <%= current_user.name1.capitalize + " " + current_user.ape1.capitalize %></p>

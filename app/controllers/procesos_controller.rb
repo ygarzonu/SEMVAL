@@ -17,7 +17,7 @@ class ProcesosController < ApplicationController
 
   # GET /procesos/new
   def new
-    @proceso = Proceso.new
+    @proceso = current_user.procesos.build
     @proceso.objetivos.build #al añadir un nuevo proceso tener la posibilidad de añadir un objetivo visional en el mismo formulario
   end
 

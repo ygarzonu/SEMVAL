@@ -1,5 +1,6 @@
 class ObjetivosController < ApplicationController
 	before_action :set_objetivo, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!
 
 	def index
 		@objetivos = Objetivo.all.order("created_at DESC")
@@ -11,11 +12,12 @@ class ObjetivosController < ApplicationController
 	end
 
 	def show	
-	
+		
 	end
 
 	def edit
-    	@objetivo.indicador.build #permitirá agregar un nuevo indicador asociado al objetivo
+		@objetivo = Objetivo.find(params[:id])
+	#	@indicador = @objetivo.indicador #permitirá agregar un nuevo indicador asociado al objetivo    	
   	end
 
   	# POST /objetivos

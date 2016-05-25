@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id="meta">
     <%= f.label :Meta %><br>
-    <%= f.number_field :meta %>
+    <%= f.text_field :meta %>
   </div>
   <div class="field">
     <%= f.label :Estado %><br>
@@ -21,22 +21,22 @@
   </div>
   <div class="field">
     <%= f.label :Peor_Escenario %><br>
-    <%= f.number_field :peorE %>
+    <%= f.text_field :peorE  %>
   </div>
   <div class="field">
     <%= f.label :Fecha_de_Medición %><br>
-    <%= f.date_select :fechaM %>
+    <%= f.date_select :fechaM, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %>
   </div>
   <div class="field">
     <%= f.label :Fecha_de_Corte %><br>
-    <%= f.date_select :fechaC %>
+    <%= f.date_select :fechaC, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']} %>
   </div>
   <div class="field">
     <%= f.label :Valor %><br>
     <%= f.number_field :valor %>
   </div>
   <div class="field">
-    <%= f.label :valorP %><br>
+    <%= f.label :valor_Ponderado %><br>
     <%= f.number_field :valorP %>
   </div>
   <div class="field">

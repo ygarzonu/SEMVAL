@@ -27,8 +27,10 @@
       <%= f.select :tipo, lista, selected: "Asc"%>
     </div>
      <div class="form-group">
-      <label class="col-sm-4 control-label">Unidad</label>
-      <%= f.text_field :unidad, class:"form-control-static" %>
+        <% unidades ={'Días' => 'Días', 'Pesos' => 'Pesos', 'Porcentaje' => 'Porcentaje'}%>
+        <% lista = unidades.sort %>
+        <label class="col-sm-4 control-label">Unidad</label>
+        <%= f.select :unidad, lista, selected: "Asc"%>
     </div>
     <div class="form-group">
       <% sentidos ={'Ascendente' => 'Asc', 'Descendente' => 'Desc'}%>
@@ -66,14 +68,14 @@
     </div>
     <div class="form-group">
       <label class="col-sm-4 control-label">Fecha de Inicio</label>
-      <%= f.date_select :fechaI, class:"form-control-static" %>
+      <%= f.date_select :fechaI, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']}, class:"form-control-static" %>
     </div>
     <div class="form-group">
       <label class="col-sm-4 control-label">Fecha de Corte</label>
-      <%= f.date_select :fechaC, {:use_month_names => [t(:jan), t(:feb), t(:mar), t(:apr), t(:may), t(:jun), t(:jul), t(:aug), t(:sep), t(:oct), t(:nov), t(:dec)]}, class:"form-control-static" %>
+      <%= f.date_select :fechaC, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']}, class:"form-control-static" %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit class: 'btn btn-default' %>
     </div>
   <% end %>
 </form>

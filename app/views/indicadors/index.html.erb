@@ -4,8 +4,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Proceso</th>
       <th>Variable de Medición</th>
-      <th>Nombre</th>
+      <th>Nombre de indicador</th>
       <th>Tipo</th>
       <th>Unidad</th>
       <th>Sentido</th>
@@ -25,6 +26,7 @@
   <tbody>
     <% @indicadors.each do |indicador| %>
       <tr>
+        <td><%= indicador.objetivo.proceso.nombre %></td>
         <td><%= indicador.variableM %></td>
         <td><%= indicador.nombre %></td>
         <td><%= indicador.tipo %></td>

@@ -1,42 +1,51 @@
+$white: #FFFFFF;
 
+/*-----------------Banner Styles------------------------*/
 #banner {
 	background-image: url(image_path("banner.jpg"));
-	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: top center;
-	width: 100%;
-	position: relative; 
-	z-index:auto;
-	display: table;
-	.callout_inner {
-		display: table-cell;
-		vertical-align: middle;
-	}
-	.callout {
-		text-align: center;
-		width: 33.3333%;
-		padding: 1.5rem 2.5%;
-		float: left;
-		h1 {
-			@include bold_font;
-			color: white;
-			margin-bottom: 0;
-		}
-	}
+	background-size: cover;	
+	position: relative;
 }
 
+.content {
+	padding: 8rem 0 26rem 0;
+	.title, .sub_title {
+		color: $white;
+		text-align: center;
+	}
+	.title {
+		font-size: 4.5rem;
+		margin: 0;
+	}
+	.sub_title {
+		font-weight: 400;
+		font-size: 1.35rem;
+		width: 500px;
+		margin: 0 auto 2rem auto;
+		line-height: 1.75;
+		p {
+			font-size: 1.5rem;
+		}
+	}
+	.button_wrapper {
+		text-align: center;
+		margin: 3rem 0;
+	}
+}
 
 
 /*--------------caracteristicas------------------*/
 .caracteristicas{
 	padding: 30px 0;
+	position: relative;
 }
 
 .caracteristicas .item{
-	width: 300px;
+	width: 31%;
 	padding: 20px 20px;
 	float: left;
-	text-align: center; 
+	text-align: center;
 }
 
 .caracteristicas .item .icon{

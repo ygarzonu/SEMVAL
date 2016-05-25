@@ -11,12 +11,18 @@
     </div>
   <% end %>
 
-  <div class="panel panel-default">
+  <div class="panel panel-default var">
     <div class="panel-heading">Variables</div>
     <div class="panel-body">
       <div class="field">
         <%= f.label :Nombre %><br>
         <%= f.text_field :nombre %>
+      </div>
+      <div class="field">      
+        <% unidades ={'Días' => 'Días', 'Pesos' => 'Pesos', 'Porcentaje' => 'Porcentaje'}%>
+        <% lista = unidades.sort %>
+        <%= f.label :Unidad %><br>
+        <%= f.select :unidad, lista, selected: "Asc"%>
       </div>
       <div class="field">
         <%= f.label :Valor_Periodo_Anterior %><br>

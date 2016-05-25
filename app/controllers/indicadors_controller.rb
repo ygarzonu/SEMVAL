@@ -1,6 +1,6 @@
 class IndicadorsController < ApplicationController
   before_action :set_indicador, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index]
   # GET /indicadors
   # GET /indicadors.json
   def index
@@ -17,20 +17,20 @@ class IndicadorsController < ApplicationController
 
   # GET /indicadors/new
   def new
-    @indicador = Indicador.new #current_user.indicadors.build
+    @indicador = Indicador.new
   end
 
   # GET /indicadors/1/edit
   def edit
     @indicador = Indicador.find(params[:id])
-    @variable = @indicador.variables.first
+    @variable = @indicador.variables.build
   end
 
   # POST /indicadors
   # POST /indicadors.json
   def create
     @indicador =  Indicador.new(indicador_params)
-
+     
     respond_to do |format|
       if @indicador.save
         format.html { redirect_to @indicador, notice: 'El indicador fue creado exitosamente.' }
@@ -47,6 +47,9 @@ class IndicadorsController < ApplicationController
   def update
     respond_to do |format|
       if @indicador.update(indicador_params)
+      #  variable_id1 = 2
+      #  variable_id2 = 1
+      #  self.calcular_formula(variable_id1.to_s+" / "+variable_id2.to_s)
         format.html { redirect_to @indicador, notice: 'El indicador fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @indicador }
       else
@@ -74,6 +77,6 @@ class IndicadorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def indicador_params
-      params.require(:indicador).permit(:variableM, :nombre, :tipo, :unidad, :sentido, :importancia, :meta, :meses, :estadoA, :peorE, :formula, :fuente, :fechaI, :fechaC )
+      params.require(:indicador).permit(:variableM, :nombre, :tipo, :unidad, :sentido, :importancia, :meta, :meses, :estadoA, :peorE, :formula, :fuente, :fechaI, :fechaC, variables_attributes: [:id, :nombre, :unidad, :valorPerAnt] )
     end
 end
