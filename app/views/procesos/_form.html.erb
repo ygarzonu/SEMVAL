@@ -46,8 +46,8 @@
         <%= f.fields_for :objetivos do | objetivo | %>
           <div class="objetivos_fields">
             <div class="fields">
-              <%= objetivo.label :objetivoV, "Objetivo Visional" %><br>
-              <%= objetivo.text_field :objetivoV,  placeholder:"Verbo Rector en Infinitivo constante + Producto + Características + Recursos + para + impacto esperado" %>
+              <%= objetivo.label :ObjetivoV, "Objetivo Visional" %><br>
+              <%= objetivo.text_field :ObjetivoV,  placeholder:"Verbo Rector en Infinitivo constante + Producto + Características + Recursos + para + impacto esperado" %>
               <%= objetivo.check_box :_destroy %>
               <%= objetivo.label :_destroy, 'eliminar' %>
             </div>    
