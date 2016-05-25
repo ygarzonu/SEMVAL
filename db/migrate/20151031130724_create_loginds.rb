@@ -3,6 +3,7 @@ class CreateLoginds < ActiveRecord::Migration
     create_table :loginds do |t|
       t.integer :meta
       t.integer :estado
+      t.integer :mes
       t.integer :peorE
       t.date :fechaM
       t.date :fechaC

@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160121221747) do
   create_table "loginds", force: :cascade do |t|
     t.integer  "meta"
     t.integer  "estado"
+    t.integer  "mes"
     t.integer  "peorE"
     t.date     "fechaM"
     t.date     "fechaC"
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160121221747) do
   create_table "logpros", force: :cascade do |t|
     t.integer  "meta"
     t.integer  "estado"
+    t.integer  "mes"
     t.integer  "peorE"
     t.date     "fechaM"
     t.date     "fechaC"

@@ -3,6 +3,7 @@ class CreateLogpros < ActiveRecord::Migration
     create_table :logpros do |t|
       t.integer :meta
       t.integer :estado
+      t.integer :mes
       t.integer :peorE
       t.date :fechaM
       t.date :fechaC
