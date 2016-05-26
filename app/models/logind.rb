@@ -4,7 +4,7 @@ class Logind < ActiveRecord::Base
   before_create :mejora
   
   
-  #  def mejora(mes)
+    def mejora(mes=1)
    #   if mes == 1
     #     puts self.indicador.estado
      # else
@@ -26,6 +26,7 @@ class Logind < ActiveRecord::Base
     #    @peorE = "#{peorE}".to_i
     #    @mejora = (@estado + ((@meta - @peorE)/11))
     #  end
+    1
     end
 
   
@@ -55,7 +56,7 @@ def set_expiration_date
 end
  
   def set_expiry_date
-  	Logind.expiry_date = Date.today.next_month
+  	1#Logind.expiry_date = Date.today.next_month
   end
  
   def remaining_days
