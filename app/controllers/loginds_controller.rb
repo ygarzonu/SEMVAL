@@ -73,6 +73,6 @@ class LogindsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def logind_params
-      params.require(:logind).permit(:meta, :estado, :peorE, :fechaM, :fechaC, :valor, :valorP, :indicador_id)
+      params.require(:logind).permit(:meta, :estado, :mes, :peorE, :fechaM, :fechaC, :valor, :valorP, :indicador_id)
     end
 end

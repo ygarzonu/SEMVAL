@@ -1,8 +1,7 @@
-<form class="form-horizontal">
-  <%= form_for(@indicador) do |f| %>
+ <%= form_for(@indicador) do |f| %>
     <% if @indicador.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@indicador.errors.count, "error") %> prohibited this indicador from being saved:</h2>
+        <h2><%= pluralize(@indicador.errors.count, "error") %> evita que el indicador sea guardado:</h2>
 
         <ul>
         <% @indicador.errors.full_messages.each do |message| %>
@@ -78,4 +77,3 @@
       <%= f.submit class: 'btn btn-default' %>
     </div>
   <% end %>
-</form>

@@ -13,26 +13,24 @@
 </head>
 <body>
 	
-	<section>
-		<header class="cf">
-			<div class="wrapper">
-	 			<p id="logo"><%= link_to "SEMVAL SG", root_path %></p>
+	<section id="banner">
+		<div class="wrapper">
+			<header>
+				<p id="logo"><%= link_to "SEMVAL SG", root_path %></p>
 				<nav>
 					<%= render "partials/navigation" %>
 				</nav>
-			</div>
-		</header>
+			</header>
+			<%= render "layouts/notifications" %>
+		</div>
 	</section>
-
-	<section>
-		<%= render "layouts/notifications" %>
-	</section>
-
-	<section class="wrapper">
-      	<div class="container">				
+	<section class="container" >
+		<div id="content" >				
 			<%= yield %>
 		</div>
 	</section>
+	   	
+	
 		
 	<footer class="pie">
 			<p class="copyright">&copy;2015 YENIOM </p>

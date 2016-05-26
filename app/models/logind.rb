@@ -4,19 +4,19 @@ class Logind < ActiveRecord::Base
   before_create :mejora
   
   
-    def mejora(mes)
-      if mes == 1
-         puts self.indicador.estado
-      else
-        @meta = self.indicador.meta
-        puts @meta
-        @estado = self.estado
-        puts @estado
-        @peorE = self.indicador.peorE
-        puts @estado
-        @mejora = (@estado + ((@meta - @peorE)/11))
-        puts @mejora
-      end
+  #  def mejora(mes)
+   #   if mes == 1
+    #     puts self.indicador.estado
+     # else
+     #   @meta = self.indicador.meta
+     #   puts @meta
+      #  @estado = self.estado
+      #  puts @estado
+      #  @peorE = self.indicador.peorE
+      #  puts @estado
+      #  @mejora = (@estado + ((@meta - @peorE)/11))
+      #  puts @mejora
+      #end
 
     #  if mes == 1
     #  "#{estado}".parameterize
