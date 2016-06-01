@@ -10,9 +10,13 @@ class Logind < ActiveRecord::Base
     end
   end
 
-  def get_value
-    
-  end
+ # def get_value(ind)
+  #  unless estado == nil 
+  #    ((get_indicador(ind).Logind.estado / get_indicador(ind).Logind.meta)*100)
+  #  else
+
+  #  end
+ # end
 
   def days_in_month(month, year = now.year)
     if month == 2 && ::Date.gregorian_leap?(year)
@@ -22,11 +26,13 @@ class Logind < ActiveRecord::Base
     end
   end
 
+
   private
 
   def get_indicador(ind)
     @indicador = Indicador.find(ind.to_i)
   end
+
   def get_last_state(mes)
     Logind.find_by_mes(mes -1).estado
   end

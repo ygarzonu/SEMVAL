@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :Peor_Escenario %><br>
-    <%= f.text_field :peorE  %>
+    <%= f.text_field :peorE, value: 0, disabled: true  %>
   </div>
   <div class="field">
     <%= f.label :Fecha_de_Medición %><br>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :Valor %><br>
-    <%= f.number_field :valor %>
+    <%= f.number_field :valor, value: @logind.get_value, disabled: true %>
   </div>
   <div class="field">
     <%= f.label :valor_Ponderado %><br>

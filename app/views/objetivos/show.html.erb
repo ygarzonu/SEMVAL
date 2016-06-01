@@ -16,6 +16,36 @@
       <p>no hay indicador</p>
       <%= link_to 'Crear indicador', new_indicador_path(objetivo_id: @objetivo.id), class:"btn btn-warning" %>
     <% end %>
+
+    <table class="table table-bordered table-hover ">
+      <thead>
+      <tr> 
+      	<th></th>
+        <th>Ene</th>
+        <th>Feb</th>
+        <th>Mar</th>
+        <th>Abr</th>
+        <th>May</th>
+        <th>Jun</th>
+        <th>Jul</th>
+        <th>Ago</th>
+        <th>Sep</th>
+        <th>Oct</th>
+        <th>Nov</th>
+        <th>Dic</th>       
+      </tr>              
+  </thead>
+  <tbody>
+     <tr>
+        <td>valor actual</td>
+     </tr>
+     <tr>
+       	<td>Valor esperado</td>
+     </tr>
+     <tr>
+       	<td>Resultado</td>
+     </tr>
+      </tbody></table>
 </section> 
  
 <%= link_to 'Editar', edit_objetivo_path(@objetivo.id), class:"btn btn-warning" %> |
