@@ -13,7 +13,7 @@
 
   <div class="field" id="meta">
     <%= f.label :Meta %><br>
-    <%= f.text_field :meta %>
+    <%= f.text_field :meta, value: @logind.mejora(3,@indicador_id) , disabled: true  %>
   </div>
   <div class="field">
     <%= f.label :Estado %><br>
