@@ -1,44 +1,4 @@
-<script type="text/javascript">
-	$( document ).ready(function() {
-		$("#logind_mes").change(function(){
-			
-			$("#logind_fechaM_2i").val($("#logind_mes").val());
-			
-			$("#logind_fechaC_2i").val($("#logind_mes").val());
-			
-			if($("#logind_mes").val()===2){
-				$("#logind_fechaC_3i").val(28);
-			}else{
-				$("#logind_fechaC_3i").val(30);
-			}
-
-			$("#logind_meta").val(<%= get_meta(@indicador.id, 2)%>);
-		
-		
-		
-		});
-
-		$('#logind_estado').change(function(){
-			$("#logind_valor").val( getValue());
-		});
-
-
-		function getValue(){
-			var v1 = $('#logind_estado').val();
-			var v2 = $('#logind_meta').val();
-
-			if($('#logind_estado').val() != null  && $('#logind_meta').val()!= null){
-		  	return ((v1/ v2)*100).toFixed(2);
-			}else{
-				return 0;
-			}
-		}
-
-
-
-	});
-	</script>
-
+<%= render partial: "get_data" %>
 <div class="row">
 	<div>
 		<section class="col-sm-4">

@@ -1,0 +1,56 @@
+<script type="text/javascript">
+		function getMeta(mes){
+		if (mes == 1){
+			var estadoA = <%= @ind_est_A %>;
+	 		meta = estadoA;
+		}else{
+     	meta = latestState(mes) + (( <%= @indicador.meta -  @indicador.estadoA %>)/11)
+    }
+    return meta.toFixed(2);
+  }
+
+  function latestState(mes){
+  	estado = estados[mes-2];
+   	return  estado;
+ 	}		
+
+	function getValue(){
+		var v1 = $('#logind_estado').val();
+		var v2 = $('#logind_meta').val();
+
+		if($('#logind_estado').val() != null  && $('#logind_meta').val()!= null){
+	  	return ((v1/ v2)*100).toFixed(2);
+		}else{
+			return 0;
+		}
+	}
+
+	var estados = <%= @estados %>
+
+	$( document ).ready(function() {
+
+		$("#logind_mes").change(function(){
+			
+			$("#logind_fechaM_2i").val($("#logind_mes").val());
+			
+			$("#logind_fechaC_2i").val($("#logind_mes").val());
+			
+			if($("#logind_mes").val()===2){
+				$("#logind_fechaC_3i").val(28);
+			}else{
+				$("#logind_fechaC_3i").val(30);
+			}
+
+			var mes = $("#logind_mes").val();
+			var value = getMeta(mes);
+
+			$("#logind_meta").val(value);
+
+		});
+
+		$('#logind_estado').change(function(){
+			$("#logind_valor").val( getValue());
+		});
+
+	});
+</script>

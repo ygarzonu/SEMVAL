@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Logind.create(meta: 95, estado: 85, mes: 1, peorE: 0, fechaM: DateTime.strptime("01/30/2016 17:00", "%m/%d/%Y %H:%M"), fechaC: DateTime.strptime("01/30/2016 17:00", "%m/%d/%Y %H:%M"), indicador_id: 1)
+Logind.create(meta: 95, estado: 86, mes: 2, peorE: 0, fechaM: DateTime.strptime("02/28/2016 17:00", "%m/%d/%Y %H:%M"), fechaC: DateTime.strptime("02/28/2016 17:00", "%m/%d/%Y %H:%M"), indicador_id: 1)
+Logind.create(meta: 95, estado: 87, mes: 3, peorE: 0, fechaM: DateTime.strptime("03/30/2016 17:00", "%m/%d/%Y %H:%M"), fechaC: DateTime.strptime("03/30/2016 17:00", "%m/%d/%Y %H:%M"), indicador_id: 1)
 Logind.create(meta: 95, estado: 88, mes: 4, peorE: 0, fechaM: DateTime.strptime("01/30/2016 17:00", "%m/%d/%Y %H:%M"), fechaC: DateTime.strptime("01/30/2016 17:00", "%m/%d/%Y %H:%M"), indicador_id: 1)
 Logind.create(meta: 95, estado: 89, mes: 5, peorE: 0, fechaM: DateTime.strptime("02/28/2016 17:00", "%m/%d/%Y %H:%M"), fechaC: DateTime.strptime("02/28/2016 17:00", "%m/%d/%Y %H:%M"), indicador_id: 1)
 Logind.create(meta: 95, estado: 90, mes: 6, peorE: 0, fechaM: DateTime.strptime("03/30/2016 17:00", "%m/%d/%Y %H:%M"), fechaC: DateTime.strptime("03/30/2016 17:00", "%m/%d/%Y %H:%M"), indicador_id: 1)

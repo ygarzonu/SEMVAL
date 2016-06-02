@@ -17,22 +17,19 @@ class LogindsController < ApplicationController
     @logind = Logind.new 
     @indicador = Indicador.find(params[:indicador_id])
     @indicador_id = params[:indicador_id]
-    @estados = {
-      "01" => Logind.where(indicador_id: @indicador_id, mes: 1).first.estado,
-      "02" => Logind.where(indicador_id: @indicador_id, mes: 2).first.estado,
-      "03" => Logind.where(indicador_id: @indicador_id, mes: 3).first.estado,
-      "04" => Logind.where(indicador_id: @indicador_id, mes: 4).first.estado,
-      "05" => Logind.where(indicador_id: @indicador_id, mes: 5).first.estado,
-      "06" => Logind.where(indicador_id: @indicador_id, mes: 6).first.estado,
-      "07" => Logind.where(indicador_id: @indicador_id, mes: 7).first.estado,
-      "08" => Logind.where(indicador_id: @indicador_id, mes: 8).first.estado,
-      "09" => Logind.where(indicador_id: @indicador_id, mes: 9).first.estado,
-      "10" => Logind.where(indicador_id: @indicador_id, mes: 10).first.estado,
-      "11" => Logind.where(indicador_id: @indicador_id, mes: 11).first.estado,
-      "12" => Logind.where(indicador_id: @indicador_id, mes: 12).first.estado
-    }
-    p "_"*100
-    p @estados
+    @ind_est_A = @indicador.estadoA
+    @estados = Logind.where(indicador_id: @indicador_id, mes: 1).first.estado,
+    @estado2 = Logind.where(indicador_id: @indicador_id, mes: 2).first.estado,
+    @estado3 = Logind.where(indicador_id: @indicador_id, mes: 3).first.estado,
+    @estado4 = Logind.where(indicador_id: @indicador_id, mes: 4).first.estado,
+    @estado5 = Logind.where(indicador_id: @indicador_id, mes: 5).first.estado,
+    @estado6 = Logind.where(indicador_id: @indicador_id, mes: 6).first.estado,
+    @estado7 = Logind.where(indicador_id: @indicador_id, mes: 7).first.estado,
+    @estado8 = Logind.where(indicador_id: @indicador_id, mes: 8).first.estado,
+    @estado9 = Logind.where(indicador_id: @indicador_id, mes: 9).first.estado,
+    @estado10 = Logind.where(indicador_id: @indicador_id, mes: 10).first.estado,
+    @estado11 = Logind.where(indicador_id: @indicador_id, mes: 11).first.estado,
+    @estado12 = Logind.where(indicador_id: @indicador_id, mes: 12).first.estado
   end
 
   # GET /loginds/1/edit
