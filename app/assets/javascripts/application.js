@@ -13,15 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-sprockets.
+//= require jquery
+//= require_tree .
 
-
-//$("#mejora").change(function(){
-//	alert($('select[name: :mes]').val());
-//	$(':meta').val($(this).val())
-	//source: 'loginds/new.json'
-	//select: function ( event, ui) {
-//	})
 
 $(function(){
 	$('.logbymonth').change(function(){
@@ -30,19 +24,17 @@ $(function(){
 	});
 });
 
-
 $(document).ready(function(){
   $('.open').click(function(){
-        $('#popup').fadeIn('slow');
-        $('.popup-overlay').fadeIn('slow');
-        $('.popup-overlay').height($(window).height());
-        return false;
-    });
+    $('#popup').fadeIn('slow');
+    $('.popup-overlay').fadeIn('slow');
+    $('.popup-overlay').height($(window).height());
+    return false;
+  });
     
-    $('#close').click(function(){
-        $('#popup').fadeOut('slow');
-        $('.popup-overlay').fadeOut('slow');
-        return false;
-    });
+  $('#close').click(function(){
+    $('#popup').fadeOut('slow');
+    $('.popup-overlay').fadeOut('slow');
+    return false;
+  });
 });
-</script>

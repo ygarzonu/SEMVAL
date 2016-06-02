@@ -19,10 +19,11 @@ Rails.application.routes.draw do
   resources :objetivos
 
   resources :indicadors do
-    resources :loginds
+    resources :loginds 
     resources :comments
   end
   
+
   resources :variables
 
   resources :logvars
@@ -43,6 +44,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
     get '/login' => 'devise/sessions#new'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

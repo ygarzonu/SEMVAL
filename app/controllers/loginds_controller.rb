@@ -15,8 +15,24 @@ class LogindsController < ApplicationController
   # GET /loginds/new
   def new
     @logind = Logind.new 
-    @indicador_nombre = Indicador.find(params[:indicador_id]).nombre
+    @indicador = Indicador.find(params[:indicador_id])
     @indicador_id = params[:indicador_id]
+    @estados = {
+      "01" => Logind.where(indicador_id: @indicador_id, mes: 1).first.estado,
+      "02" => Logind.where(indicador_id: @indicador_id, mes: 2).first.estado,
+      "03" => Logind.where(indicador_id: @indicador_id, mes: 3).first.estado,
+      "04" => Logind.where(indicador_id: @indicador_id, mes: 4).first.estado,
+      "05" => Logind.where(indicador_id: @indicador_id, mes: 5).first.estado,
+      "06" => Logind.where(indicador_id: @indicador_id, mes: 6).first.estado,
+      "07" => Logind.where(indicador_id: @indicador_id, mes: 7).first.estado,
+      "08" => Logind.where(indicador_id: @indicador_id, mes: 8).first.estado,
+      "09" => Logind.where(indicador_id: @indicador_id, mes: 9).first.estado,
+      "10" => Logind.where(indicador_id: @indicador_id, mes: 10).first.estado,
+      "11" => Logind.where(indicador_id: @indicador_id, mes: 11).first.estado,
+      "12" => Logind.where(indicador_id: @indicador_id, mes: 12).first.estado
+    }
+    p "_"*100
+    p @estados
   end
 
   # GET /loginds/1/edit
@@ -64,7 +80,6 @@ class LogindsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   
   private
     # Use callbacks to share common setup or constraints between actions.
