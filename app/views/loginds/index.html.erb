@@ -3,7 +3,7 @@
     <table class="table table-bordered table-hover ">
       <thead>
       <tr> 
-        <th></th>
+        <th>2016</th>
         <th>Ene</th>
         <th>Feb</th>
         <th>Mar</th>
@@ -20,43 +20,77 @@
               
   </thead>
 
-  <tbody>
-    <% @loginds.each do |logind| %>
-     <tr>
+  <tbody>    
+    <% @loginds.collect{|logind| [logind.meta]}.transpose.each do |line| %>
+      <tr>
         <th>Meta</th>
-        <td><%= logind.meta %></td>
+        <% line.each do |cell| %>
+          <td><%= cell %></td>
+        <% end %>
       </tr>
+    <% end %>
+    
+    <% @loginds.collect{|logind| [logind.estado]}.transpose.each do |line| %>
       <tr>
         <th>Estado Actual</th>
-        <td><%= logind.estado %></td>  
+        <% line.each do |cell| %>
+          <td><%= cell %></td>
+        <% end %>
       </tr>
+    <% end %>
+     
+    <% @loginds.collect{|logind| [logind.peorE]}.transpose.each do |line| %>
       <tr>
         <th>Peor Escenario</th>
-        <td><%= logind.peorE %></td>
+        <% line.each do |cell| %>
+          <td><%= cell %></td>
+        <% end %>
       </tr>
+    <% end %>
+
+    <% @loginds.collect{|logind| [logind.fechaM]}.transpose.each do |line| %>
       <tr>
         <th>Fecha de medición</th>
-        <td><%= logind.fechaM %></td>
-      </tr>  
+        <% line.each do |cell| %>
+          <td><%= cell %></td>
+        <% end %>
+      </tr>
+    <% end %>
+
+    <% @loginds.collect{|logind| [logind.fechaC]}.transpose.each do |line| %>
       <tr>
         <th>Fecha de corte</th>
-        <td><%= logind.fechaC %></td>
+        <% line.each do |cell| %>
+          <td><%= cell %></td>
+        <% end %>
       </tr>
+    <% end %>
+
+    <% @loginds.collect{|logind| [logind.valor]}.transpose.each do |line| %>
       <tr>
         <th>Valor</th>
-        <td><%= logind.valor %></td>
+        <% line.each do |cell| %>
+          <td><%= cell %></td>
+        <% end %>
       </tr>
+    <% end %>
+
+    <% @loginds.collect{|logind| [logind.indicador_id]}.transpose.each do |line| %>
       <tr>
-        <th>Valor Ponderado</th>
-        <td><%= logind.valorP %></td>
-      </tr>  
-      <tr>
-        <th>indicador</th>
-        <td><%= logind.indicador_id %></td>
-      </tr> 
+        <th>Indicador</th>
+        <% line.each do |cell| %>
+          <td><%= cell %></td>
+        <% end %>
+      </tr>
     <% end %>
   </tbody>
 </table>
 <br>
+
 <%= link_to 'Nuevo registro', new_logind_path, class:"btn btn-warning" %>
 <% end %>
+
+    <div>
+      <h3>Cálculo mes a mes</h3> 
+        <%= line_chart Logind.group_by_month(:valor).count %>
+    </div>

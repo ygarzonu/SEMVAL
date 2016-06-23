@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'mysql2', '~> 0.3.20'
 
 gem 'rails', '4.2.4'
 
@@ -27,6 +28,10 @@ gem 'nested_form', '~> 0.3.2'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 
 gem 'font-awesome-sass'
+
+gem 'chartkick', '~> 2.0'
+
+gem 'groupdate', '~> 3.0'
 
 
 

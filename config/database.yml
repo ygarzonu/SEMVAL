@@ -1,8 +1,12 @@
 
 default: &default
-  adapter: sqlite3
+  #adapter: sqlite3
+  adapter: mysql2
   encoding: utf8
-
+  pool: 5
+  username: root
+  password: Sakuroot19*
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default

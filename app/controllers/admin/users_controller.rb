@@ -1,6 +1,8 @@
 class Admin::UsersController < ApplicationController
 	def index
 		@users = User.all
+		@process_count = User.includes(:procesos).group("procesos.user_id").pluck("users.name1, count(procesos.id)")
+		#@process_count = Proceso.group(:user_id).count
 	end
 
 	def edit

@@ -1,5 +1,17 @@
 <h1>Tablero de Control</h1>
 
+	<div class="row">
+		<div class="col-xs-6">
+			<h3>Procesos por lider</h3>	
+				<%= column_chart @process_count %>
+		</div>
+
+		<div class="col-xs-6">
+		    <h3>Visits By Country Per Day</h3>
+		    <%= line_chart User.pluck("name1").uniq.map { |c| { name: c, data: @users.where(name1: c).group_by_day(:current_sign_in_at, format: "%B %d, %Y").count }  }, discrete: true %> 
+		</div>
+	</div>
+
 <table class="table table-bordered table-hover">
 	<thead>
 		<tr>

@@ -1,4 +1,5 @@
   <% if user_signed_in? %>
+    <%-# Tabla de estructura de procesos -%>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -37,19 +38,51 @@
       </tbody>
     </table>
     <br>
+   
     <% if current_user %>
     <%= link_to 'Nuevo Proceso', new_proceso_path, class: "btn btn-warning" %>
+    
+    
+      <%-# Resumen Empresarial -%>
+      <h1>Registros procesos: </h1>
+        <table class="table table-bordered table-hover ">
+          <thead>
+            <tr> 
+              <th>Procesos</th>
+              <th>Ene</th>
+              <th>Feb</th>
+              <th>Mar</th>
+              <th>Abr</th>
+              <th>May</th>
+              <th>Jun</th>
+              <th>Jul</th>
+              <th>Ago</th>
+              <th>Sep</th>
+              <th>Oct</th>
+              <th>Nov</th>
+              <th>Dic</th>
+              <th>% importancia</th>        
+            </tr>              
+          </thead>
+
+          <tbody>    
+            
+          </tbody>
+        </table>
+      <br>
     <% end %>
+    
     <%elsif%>
+      <%-# Si no se inicia sesión, se puede ver un resumen general de los procesos de la organización -%>
       <h1>Procesos</h1>
         <% @procesos.each do |proceso| %>
         <div class="col-md-3 thumbnail">                    
-              <article class="item proceso">
-                <p class="valor"><%= proceso.meta %></p>
-                <h2 class="text-center"><%= link_to proceso.nombre, proceso %></h2>
+          <article class="item proceso">
+            <p class="valor"><%= proceso.meta %></p>
+              <h2 class="text-center"><%= link_to proceso.nombre, proceso %></h2>
                 <button type="button" class="btn btn-primary">meta: <span class="badge"><%= proceso.meta %></span></button>
-                <p> <%= time_ago_in_words(proceso.created_at) %> </p>
-              </article>  
+              <p> <%= time_ago_in_words(proceso.created_at) %> </p>
+          </article>  
         </div>
     <%end%>
 <%end%>

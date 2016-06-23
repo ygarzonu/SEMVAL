@@ -1,21 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <section class="containerWaterMark">
-	<h1>Proceso: <%= @objetivo.proceso.nombre.upcase %></h1>
+	<h1 class="text-center">Proceso: <%= @objetivo.proceso.nombre.upcase %></h1>
 	<blockquote>
 		<p class="bg-info">
 		  <strong>Objetivo Visional:</strong>
 		  <%= @objetivo.objetivoV %> 
 		</p>
 	</blockquote> 
-	<% unless @objetivo.indicador == nil %>
-	<h2>Indicador: <%= @objetivo.indicador.variableM %></h2>
-	 
-	<h3 class="text-center"><%= link_to @objetivo.indicador.nombre, indicador_path(@objetivo.indicador) %></h3>
-	 <% else %>
-      <p>no hay indicador</p>
-      <%= link_to 'Crear indicador', new_indicador_path(objetivo_id: @objetivo.id), class:"btn btn-warning" %>
-    <% end %>
+	
+  <% unless @objetivo.indicador == nil %>
+  <blockquote>
+	  <strong>Indicador: </strong>
+    <%= @objetivo.indicador.variableM %>
+	</blockquote>
+	<h4 class="text-center"><%= link_to @objetivo.indicador.nombre, indicador_path(@objetivo.indicador) %></h4>
+  <% else %>
+    <p>no hay indicador</p>
+    <%= link_to 'Crear indicador', new_indicador_path(objetivo_id: @objetivo.id), class:"btn btn-warning" %>
+  <% end %>
 
     <table class="table table-bordered table-hover ">
       <thead>

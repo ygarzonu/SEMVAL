@@ -1,7 +1,7 @@
 <%# Requerido por devise y usado por toda la app %>
 
 <% if user_signed_in? %>
-	<p class="bg-success">Hola, <%= current_user.name1.capitalize + " " + current_user.ape1.capitalize %></p>
+	<p class="bg-success" id="user-sign">Hola, <%= current_user.name1.capitalize + " " + current_user.ape1.capitalize %></p>
 <%end%>
 
 <% if notice %>

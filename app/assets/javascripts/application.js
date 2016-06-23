@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .
 
 
@@ -37,4 +39,6 @@ $(document).ready(function(){
     $('.popup-overlay').fadeOut('slow');
     return false;
   });
+
+  
 });

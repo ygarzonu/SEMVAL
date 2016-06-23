@@ -4,41 +4,37 @@
   	<meta charset="utf-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  	<script>
+  		var Chartkick = {"language": "es"};
+	</script>
+	<%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>		
+	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 	<title> AppIG | Indicadores de Gestión </title>
-  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  		
+  	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<link rel="stylesheet" href="animate.css.scss">	
   	<%= csrf_meta_tags %>
 
 </head>
 <body>
-	
-	<section id="banner">
-		<div class="wrapper">
-			<header>
-				<p id="logo"><%= link_to "SEMVAL SG", root_path %></p>
-				<nav>
-					<%= render "partials/navigation" %>
-				</nav>
-			</header>
+	<div class="container-fluid"> <!-- all the content on the page is mobile-responsive -->
+		<header>
+			<p id="logo"><%= link_to "SEMVAL SG", root_path %></p>
+			<nav>
+				<%= render "partials/navigation" %>
+			</nav>
+		</header>
 			<%= render "layouts/notifications" %>
-		</div>
-	</section>
-	<section class="container" >
-		<div id="content" >				
-			<%= yield %>
-		</div>
-	</section>
-	   	
-	
-		
-	<footer class="pie">
-			<p class="copyright">&copy;2016 YENIOM </p>
-	</footer>
+									
+		<%= yield %>			
+				
+		<footer class="pie">
+				<p class="copyright">&copy;2016 YENIOM </p>
+		</footer>
+	</div>
 </body>
-<script type = "text/javascript" src="wow.min.js"></script>
+<!--<script type = "text/javascript" src="wow.min.js"></script>
 <script>
     new WOW().init();
-</script>
+</script>-->
 </html>

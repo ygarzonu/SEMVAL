@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-sm-6">
-  <h1>Proceso: <%= @indicador.objetivo.proceso.nombre.upcase %> </h1>
+  <h2 class="text-center">Proceso: <%= @indicador.objetivo.proceso.nombre.upcase %> </h2>
+  <div class="col-sm-6">  
     <section class="containerWaterMark">
       <div class="indicador">
         <p>
-        <h2>Estructura Indicador</h2>
+        <h2 class="text-center">Estructura Indicador</h2>
         </p>
         <p>
         <strong>Variable de Medición:</strong>
@@ -90,7 +90,7 @@
       </tr>
       <tr>
         <section class="containerWaterMark">
-          <h2>Variables (Cuantitativas)</h2>
+          <h2 class="text-center">Variables (Cuantitativas)</h2>
 
           <% if @indicador.variables.any? %>
             <ul>
@@ -113,10 +113,3 @@
     </table>   
   </div>
 </div>
-
-
-
-
-
-
-

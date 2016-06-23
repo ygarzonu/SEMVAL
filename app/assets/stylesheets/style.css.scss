@@ -67,17 +67,15 @@ a {
 
 .alert p{
 	padding: 1px 1px;
-	margin: 0 auto;
 }
 
 .bg-success p{
 	padding: 1px 1px;
-	margin-bottom: 1px;
+	padding-left: 20px;
 }
 
 .notice p{
 	padding: 1px 1px;
-	margin: 0 auto;
 }
 
 
@@ -86,7 +84,7 @@ a {
 		border-bottom: 1px solid $border;
 		padding: 2rem 0;
 		position: relative;
-		height: 6em;
+		height: 5em;
 	}
 	#logo {
 		color: $dark;

@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     
     
    	
-   	ROLES = %w[admin altaDir lider pueblo]
+   	ROLES = %w[admin altaDir lider colaborador]
 
    	def roles=(roles)
   	  self.permission_level = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)

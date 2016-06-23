@@ -1,5 +1,6 @@
 class LogindsController < ApplicationController
   before_action :set_logind, only: [:show, :edit, :update, :destroy]
+  before_action :set_months, only: [:new,:create,:edit]
 
   # GET /loginds
   # GET /loginds.json
@@ -17,19 +18,13 @@ class LogindsController < ApplicationController
     @logind = Logind.new 
     @indicador = Indicador.find(params[:indicador_id])
     @indicador_id = params[:indicador_id]
-    @ind_est_A = @indicador.estadoA
-    @estados = Logind.where(indicador_id: @indicador_id, mes: 1).first.estado,
-    @estado2 = Logind.where(indicador_id: @indicador_id, mes: 2).first.estado,
-    @estado3 = Logind.where(indicador_id: @indicador_id, mes: 3).first.estado,
-    @estado4 = Logind.where(indicador_id: @indicador_id, mes: 4).first.estado,
-    @estado5 = Logind.where(indicador_id: @indicador_id, mes: 5).first.estado,
-    @estado6 = Logind.where(indicador_id: @indicador_id, mes: 6).first.estado,
-    @estado7 = Logind.where(indicador_id: @indicador_id, mes: 7).first.estado,
-    @estado8 = Logind.where(indicador_id: @indicador_id, mes: 8).first.estado,
-    @estado9 = Logind.where(indicador_id: @indicador_id, mes: 9).first.estado,
-    @estado10 = Logind.where(indicador_id: @indicador_id, mes: 10).first.estado,
-    @estado11 = Logind.where(indicador_id: @indicador_id, mes: 11).first.estado,
-    @estado12 = Logind.where(indicador_id: @indicador_id, mes: 12).first.estado
+    @mes = params[:mes]
+    @ind_est_A = @indicador.estadoA  #en _get_data.html.erb si se selecciona el mes de enero cargue este campo en la variable estadoA
+    logind_estados(@indicador_id,@mes)
+  end
+
+  def logind_estados(id,num_mes)
+    @estados = Logind.where(indicador_id: id, mes: num_mes).first
   end
 
   # GET /loginds/1/edit
@@ -41,8 +36,6 @@ class LogindsController < ApplicationController
   def create
     @logind = Logind.new(logind_params)
     
-      
-
     respond_to do |format|
       if @logind.save
         format.html { redirect_to @logind, notice: 'El registro del indicador fue creado exitosamente.' }
@@ -82,6 +75,10 @@ class LogindsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_logind
       @logind = Logind.find(params[:id])
+    end
+
+    def set_months
+      @months = {:Enero => 1, :Febrero => 2, :Marzo => 3, :Abril => 4, :Mayo => 5, :Junio => 6, :Julio => 7, :Agosto => 8, :Septiembre => 9, :Octubre => 10, :Noviembre => 11, :Diciembre => 12} 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
