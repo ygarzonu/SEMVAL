@@ -10,3 +10,4 @@ class Admin::ApplicationController < ApplicationController
 			redirect_to '/login', alert: 'Por favor inicia sesión para ver las paginas de administración'	
 		end
 	end
+end
