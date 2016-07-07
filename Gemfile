@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 ruby "2.1.7"
 #gem 'sqlite3'
-gem 'mysql2', '~> 0.3.20'
 
 gem 'rails', '4.2.4'
 
@@ -43,6 +42,8 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+
+  gem 'mysql2', '~> 0.3.20'
 end
 
 group :production do
