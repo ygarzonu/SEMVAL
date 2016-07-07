@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "2.2.4"
 #gem 'sqlite3'
 gem 'mysql2', '~> 0.3.20'
 
@@ -33,6 +34,7 @@ gem 'chartkick', '~> 2.0'
 
 gem 'groupdate', '~> 3.0'
 
+gem 'pg', '~> 0.18.4'
 
 
 group :development, :test do
@@ -41,8 +43,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
-  gem 'pg', '~> 0.18.4'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
