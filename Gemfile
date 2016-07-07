@@ -36,6 +36,7 @@ gem 'groupdate', '~> 3.0'
 
 gem 'pg', '~> 0.18.4'
 
+gem 'rails_12factor', '~> 0.0.3'
 
 group :development, :test do
   gem 'byebug'
