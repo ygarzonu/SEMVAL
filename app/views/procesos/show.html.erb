@@ -21,30 +21,21 @@
 <section>
   <h3>Registros</h3>  
 
-  <% if @proceso.logpros.any? %>
+  <% if @proceso.objetivos.any? %>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="open">
+          <% @proceso.objetivo.indicadors.each do |indicador| %> 
           <tr>
-            <th><a href="#">ENE</a></th>
-            <th>FEB</th>
-            <th>MAR</th>
-            <th>ABR</th>
-            <th>MAY</th>
-            <th>JUN</th>
-            <th>JUL</th>
-            <th>AGO</th>
-            <th>SEP</th>
-            <th>OCT</th>
-            <th>NOV</th>
-            <th>DIC</th>
+            <th><%= indicador.nombre %></th>
           </tr> 
+          <% end %>
         </thead>
         <tbody>
-          <% @proceso.logpros.each do |rp| %>     
+          <% for n in (10..1) %>
           <tr>
-            <td><%= link_to rp, rp %></td>  
-          </tr>
+            <td><%= n %></td>            
+          </tr>         
           <% end %>
         </tbody>
       </table>

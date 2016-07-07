@@ -12,7 +12,7 @@ class ProcesosController < ApplicationController
   # GET /procesos/1
   # GET /procesos/1.json
   def show
-
+    
   end
 
   # GET /procesos/new

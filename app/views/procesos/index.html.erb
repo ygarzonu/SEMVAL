@@ -7,7 +7,6 @@
           <th>Nombre</th>
           <th>Importancia</th>
           <th>Objetivo</th>
-          <th>Meta</th>
           <th>Fecha de Inicio</th>
           <th>Fecha de Corte</th>
           <th colspan="3"></th>
@@ -21,7 +20,6 @@
             <td><%= proceso.nombre %></td>
             <td><%= proceso.importancia %></td>
             <td><%= proceso.objetivo %></td>
-            <td><%= proceso.meta %></td>
             <td><%= proceso.fechaI %></td>
             <td><%= proceso.fechaC %></td>
             <td><%= link_to '<i class="glyphicon glyphicon-eye-open" title="Mostrar"></i>'.html_safe, proceso %></td>
@@ -42,6 +40,7 @@
     <% if current_user %>
     <%= link_to 'Nuevo Proceso', new_proceso_path, class: "btn btn-warning" %>
     
+      
     
       <%-# Resumen Empresarial -%>
       <h1>Registros procesos: </h1>
@@ -66,7 +65,7 @@
           </thead>
 
           <tbody>    
-            
+          
           </tbody>
         </table>
       <br>
