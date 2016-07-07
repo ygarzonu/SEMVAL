@@ -33,6 +33,9 @@ gem 'chartkick', '~> 2.0'
 
 gem 'groupdate', '~> 3.0'
 
+gem 'pg', '~> 0.18.4'
+
+gem 'rails_12factor', '~> 0.0.3'
 
 
 group :development, :test do
@@ -41,8 +44,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
-  gem 'pg', '~> 0.18.4'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
