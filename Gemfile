@@ -35,6 +35,7 @@ gem 'groupdate', '~> 3.0'
 
 gem 'rails_12factor', '~> 0.0.3'
 
+gem 'rails_12factor', '~> 0.0.3'
 
 group :development, :test do
   gem 'byebug'
